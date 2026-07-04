@@ -66,7 +66,16 @@ body {
   border-bottom: 1px solid var(--card-border);
 }
 
-.brand { display: flex; align-items: center; }
+.brand { display: flex; align-items: center; gap: 10px; }
+
+.brand-beta {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-size: 1.7rem;
+  line-height: 1;
+  color: var(--steel);
+  transform: translateY(-1px);
+}
 
 .brand-name {
   font-family: var(--font-display);
@@ -133,7 +142,7 @@ body {
   height: calc(100vh - 192px);
   min-height: 420px;
   overflow-y: auto;
-  background: linear-gradient(180deg, rgba(250, 251, 253, 0.34), rgba(255, 255, 255, 0.2));
+  background: linear-gradient(180deg, rgba(250, 251, 253, 0.22), rgba(255, 255, 255, 0.1));
   border: 1px solid rgba(120, 140, 160, 0.32);
   border-radius: 22px;
   box-shadow: 0 24px 56px rgba(45, 66, 87, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.7);
@@ -143,6 +152,9 @@ body {
   scrollbar-color: rgba(124, 135, 148, 0.55) transparent;
 }
 .panel.active { display: block; }
+
+/* Ana sayfa plakaya sığar — kaydırma kapalı */
+#panel-ana { overflow: hidden; }
 
 /* estetik kaydırma çubuğu */
 .panel::-webkit-scrollbar { width: 8px; }
@@ -160,7 +172,7 @@ body {
 .reveal {
   opacity: 0;
   transform: translateY(26px) scale(0.985);
-  transition: opacity 0.7s cubic-bezier(.22,1,.36,1), transform 0.7s cubic-bezier(.22,1,.36,1);
+  transition: opacity 0.4s cubic-bezier(.22,1,.36,1), transform 0.5s cubic-bezier(.22,1,.36,1);
 }
 .reveal.in { opacity: 1; transform: translateY(0) scale(1); }
 
@@ -532,6 +544,7 @@ body {
   .pub-year { border-right: none; border-bottom: 1px solid var(--card-border); padding: 0 0 8px; }
   .pub-logo { border-right: none; border-bottom: 1px solid var(--card-border); padding: 0 0 10px; }
   .panel { padding: 28px 20px 36px; margin: 14px 12px 28px; border-radius: 18px; height: calc(100vh - 252px); }
+  #panel-ana { overflow-y: auto; } /* dar ekranda içerik sığmayabilir */
 }
 
 @media (prefers-reduced-motion: reduce) {
