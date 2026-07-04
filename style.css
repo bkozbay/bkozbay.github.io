@@ -452,13 +452,33 @@ body {
 }
 .pub-link:hover { background: var(--steel); color: #fff; }
 
+/* Proje satırlarındaki kurum logosu sütunu */
+.pub-logo {
+  display: grid;
+  place-items: center;
+  border-right: 1px solid var(--card-border);
+  padding-right: 14px;
+}
+.pub-logo img {
+  height: 44px;
+  width: auto;
+  max-width: 60px;
+  object-fit: contain;
+  filter: grayscale(1) contrast(1.05);
+  opacity: 0.8;
+  transition: filter 0.4s, opacity 0.4s;
+}
+.card:hover .pub-logo img { filter: grayscale(0.5); opacity: 0.95; }
+
 /* ── İletişim ─────────────────────────────────────── */
 .contact-grid { align-items: start; }
 .contact-main h3 { font-size: 1.05rem; word-break: break-all; }
 
 .links { list-style: none; display: grid; gap: 10px; }
 .links a {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 12px;
   color: var(--steel-deep);
   text-decoration: none;
   font-size: 0.9rem;
@@ -470,6 +490,18 @@ body {
   transition: transform 0.25s, background 0.25s;
 }
 .links a:hover { transform: translateX(6px); background: rgba(255,255,255,0.9); }
+.links .arrow { margin-left: auto; color: var(--silver-dim); }
+
+.link-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: grayscale(1) contrast(1.05);
+  opacity: 0.8;
+  transition: filter 0.3s, opacity 0.3s;
+}
+.links a:hover .link-icon { filter: grayscale(0); opacity: 1; }
 
 /* ── Alt bilgi ────────────────────────────────────── */
 .footer {
@@ -498,6 +530,7 @@ body {
   .grid-3, .grid-2 { grid-template-columns: 1fr; }
   .pub { grid-template-columns: 1fr; }
   .pub-year { border-right: none; border-bottom: 1px solid var(--card-border); padding: 0 0 8px; }
+  .pub-logo { border-right: none; border-bottom: 1px solid var(--card-border); padding: 0 0 10px; }
   .panel { padding: 28px 20px 36px; margin: 14px 12px 28px; border-radius: 18px; height: calc(100vh - 252px); }
 }
 
