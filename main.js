@@ -456,7 +456,7 @@
     // reflow — animasyonun yeniden tetiklenmesi için
     void panel.offsetWidth;
     items.forEach((el, i) => {
-      setTimeout(() => el.classList.add('in'), 80 + i * 75);
+      setTimeout(() => el.classList.add('in'), 20 + i * 35);
     });
   }
 
